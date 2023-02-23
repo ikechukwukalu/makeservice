@@ -1,0 +1,45 @@
+{
+    "name": "ikechukwukalu/makeservice",
+    "description": "A laravel package for scaffolding service classes.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ikechukwukalu\\Makeservice\\": "src/",
+            "Ikechukwukalu\\Makeservice\\Console\\Commands\\": "src/Console/Commands/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ikechukwukalu\\Makeservice\\Tests\\": "Tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "authors": [
+        {
+            "name": "Ikechukwu Kalu",
+            "email": "ea.ikechukwukalu@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "laravel/framework": "^5.7|^6.0|^7.0|^8.0|^9.0|^10.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.4.4",
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.0",
+        "php-parallel-lint/php-parallel-lint": "dev-develop"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ikechukwukalu\\Makeservice\\MakeServiceServiceProvider"
+            ]
+        }
+    }
+}
