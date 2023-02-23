@@ -1,4 +1,4 @@
-name: ClamavFileUpload Unit Tests
+name: MakeService Unit Tests
 
 on:
   push:

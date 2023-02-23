@@ -23,5 +23,5 @@ This feature/fix allows to...
 # Code samples
 
 ```php
-FileUpload::uploadFiles();
+$this->artisan('make:service SampleService')->assertSuccessful();
 ```

@@ -43,7 +43,7 @@ body:
       label: Code sample
       description: Sample a small snippet on how the feature works
       placeholder: |
-        ClamavFileUpload::newFeature()->uploadFilesToHeaven();
+        php artisan make:service --cool=new-feature;
       render: php
     validations:
       required: true

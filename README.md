@@ -1,10 +1,10 @@
-# CLAMAV FILE UPLOAD
+# MAKE SERVICE
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ikechukwukalu/clamavfileupload?style=flat-square)](https://packagist.org/packages/ikechukwukalu/clamavfileupload)
-[![Quality Score](https://img.shields.io/scrutinizer/quality/g/ikechukwukalu/clamavfileupload/main?style=flat-square)](https://scrutinizer-ci.com/g/ikechukwukalu/clamavfileupload/)
-[![Github Workflow Status](https://img.shields.io/github/actions/workflow/status/ikechukwukalu/clamavfileupload/clamavfileupload.yml?branch=main&style=flat-square)](https://github.com/ikechukwukalu/clamavfileupload/actions/workflows/clamavfileupload.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/ikechukwukalu/clamavfileupload?style=flat-square)](https://packagist.org/packages/ikechukwukalu/clamavfileupload)
-[![Licence](https://img.shields.io/packagist/l/ikechukwukalu/clamavfileupload?style=flat-square)](https://packagist.org/packages/ikechukwukalu/clamavfileupload)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/ikechukwukalu/makeservice?style=flat-square)](https://packagist.org/packages/ikechukwukalu/makeservice)
+[![Quality Score](https://img.shields.io/scrutinizer/quality/g/ikechukwukalu/makeservice/main?style=flat-square)](https://scrutinizer-ci.com/g/ikechukwukalu/makeservice/)
+[![Github Workflow Status](https://img.shields.io/github/actions/workflow/status/ikechukwukalu/makeservice/makeservice.yml?branch=main&style=flat-square)](https://github.com/ikechukwukalu/makeservice/actions/workflows/makeservice.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/ikechukwukalu/makeservice?style=flat-square)](https://packagist.org/packages/ikechukwukalu/makeservice)
+[![Licence](https://img.shields.io/packagist/l/ikechukwukalu/makeservice?style=flat-square)](https://packagist.org/packages/ikechukwukalu/makeservice)
 
 A laravel package for scaffolding service classes.
 
@@ -16,7 +16,7 @@ A laravel package for scaffolding service classes.
 ## STEPS TO INSTALL
 
 ``` shell
-composer require ikechukwukalu/clamavfileupload
+composer require ikechukwukalu/makeservice
 ```
 
 ## SERVICE CLASS

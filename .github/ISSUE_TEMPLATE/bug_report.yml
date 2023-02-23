@@ -72,7 +72,7 @@ body:
       placeholder: |
         $test = something()->causedAn()->earthQuake();
 
-        $this->assertFalse($test);
+        $this->artisan('make:service SampleService')->assertSuccessful();
 
         // or comment with "https://github.com/my-name/my-bug-report"
     validations:
