@@ -7,8 +7,16 @@ use Illuminate\Http\Request;
 class {{ class }}
 {
 
-    public static function handle(Request $request)
+    /**
+     * Handle the request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return ?array
+     */
+    public static function handle(Request $request): ?array
     {
-        //
+        $validated = $request->validated();
+
+        return null;
     }
 }
