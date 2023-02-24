@@ -10,8 +10,8 @@ A laravel package for scaffolding service classes.
 
 ## REQUIREMENTS
 
-- PHP 7.1+
-- Laravel 5.7+
+- PHP 8.0+
+- Laravel 9+
 
 ## STEPS TO INSTALL
 
