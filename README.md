@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ikechukwukalu/makeservice?style=flat-square)](https://packagist.org/packages/ikechukwukalu/makeservice)
 [![Quality Score](https://img.shields.io/scrutinizer/quality/g/ikechukwukalu/makeservice/main?style=flat-square)](https://scrutinizer-ci.com/g/ikechukwukalu/makeservice/)
+[![Code Quality](https://img.shields.io/codefactor/grade/github/ikechukwukalu/makeservice?style=flat-square)](https://www.codefactor.io/repository/github/ikechukwukalu/makeservice)
 [![Github Workflow Status](https://img.shields.io/github/actions/workflow/status/ikechukwukalu/makeservice/makeservice.yml?branch=main&style=flat-square)](https://github.com/ikechukwukalu/makeservice/actions/workflows/makeservice.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/ikechukwukalu/makeservice?style=flat-square)](https://packagist.org/packages/ikechukwukalu/makeservice)
 [![Licence](https://img.shields.io/packagist/l/ikechukwukalu/makeservice?style=flat-square)](https://github.com/ikechukwukalu/makeservice/blob/main/LICENSE.md)
