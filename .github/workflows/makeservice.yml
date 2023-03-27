@@ -49,5 +49,7 @@ jobs:
         uses: "actions/checkout@v3"
       - name: Composer install
         run: composer install
+      - name: Run Snyk Test
+        run: snyk test
       - name: "Execute unit tests"
         run: "composer run-script test"
