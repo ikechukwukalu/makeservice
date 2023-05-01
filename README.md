@@ -25,35 +25,45 @@ composer require ikechukwukalu/makeservice
 
 To generate a new service class.
 
-- `php artisan make:service SampleService`
-- `php artisan make:service SampleService --force`. This will overwrite an existing service class.
+``` shell
+php artisan make:service SampleService
+php artisan make:service SampleService --force //This will overwrite an existing service class.
+```
 
 To generate a new service class for a particular request class.
 
-- `php artisan make:request SampleRequest`
-- `php artisan make:service SampleService --request=SampleRequest`
+``` shell
+php artisan make:request SampleRequest
+php artisan make:service SampleService --request=SampleRequest
+```
 
 ## TRAIT CLASS
 
 To generate a new trait class.
 
-- `php artisan make:trait SampleTrait`
-- `php artisan make:trait SampleTrait --force`. This will overwrite an existing trait class.
+``` shell
+php artisan make:trait SampleTrait
+php artisan make:trait SampleTrait --force //This will overwrite an existing trait class.
+```
 
 ## INTERFACE CLASS
 
 To generate a new interface class.
 
-- `php artisan make:interface SampleInterface`
-- `php artisan make:interface SampleInterface --force`. This will overwrite an existing interface class.
+``` shell
+php artisan make:interface SampleInterface
+php artisan make:interface SampleInterface --force //This will overwrite an existing interface class.
+```
 
 ## REPOSITORY CLASS
 
 To generate a new repository class for a particular interface class.
 
-- `php artisan make:interface UserRepositoryInterface --model=User`
-- `php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface`.
-- `php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface --force`. This will overwrite an existing repository class.
+``` shell
+php artisan make:interface UserRepositoryInterface --model=User
+php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface
+php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface --force //This will overwrite an existing repository class.
+```
 
 ### Bind the interface and the implementation
 
