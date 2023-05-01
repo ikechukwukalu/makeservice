@@ -2,4 +2,4 @@
 
 - Added Traits scaffolding.
 - Added Interface scaffolding.
-- Added Repository scafollding.
+- Added Repository scaffolding.
