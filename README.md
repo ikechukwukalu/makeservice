@@ -55,6 +55,32 @@ To generate a new repository class for a particular interface class.
 - `php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface`.
 - `php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface --force`. This will overwrite an existing repository class.
 
+### Bind the interface and the implementation
+
+The last thing we need to do is bind `UserRepository` to `UserRepositoryInterface` in Laravel's Service Container. We will do this via a Service Provider. Create one using the following command:
+
+``` shell
+php artisan make:provider RepositoryServiceProvider
+```
+
+Open `app/Providers/RepositoryServiceProvider.php` and update the register function to match the following:
+
+``` php
+public function register()
+{
+    $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+}
+```
+
+Finally, add the new Service Provider to the providers array in `config/app.php`.
+
+``` php
+'providers' => [
+    // ...other declared providers
+    App\Providers\RepositoryServiceProvider::class,
+];
+```
+
 ## LICENSE
 
 The MS package is an open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
