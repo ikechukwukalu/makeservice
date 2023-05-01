@@ -3,7 +3,10 @@
 namespace Ikechukwukalu\Makeservice;
 
 use Illuminate\Support\ServiceProvider;
+use Ikechukwukalu\Makeservice\Console\Commands\MakeInterfaceCommand;
+use Ikechukwukalu\Makeservice\Console\Commands\MakeRepositoryCommand;
 use Ikechukwukalu\Makeservice\Console\Commands\MakeServiceCommand;
+use Ikechukwukalu\Makeservice\Console\Commands\MakeTraitCommand;
 
 class MakeServiceServiceProvider extends ServiceProvider
 {
@@ -17,7 +20,10 @@ class MakeServiceServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                MakeServiceCommand::class
+                MakeInterfaceCommand::class,
+                MakeRepositoryCommand::class,
+                MakeServiceCommand::class,
+                MakeTraitCommand::class
             ]);
         }
     }

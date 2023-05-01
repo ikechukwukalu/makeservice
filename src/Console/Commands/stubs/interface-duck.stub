@@ -1,0 +1,17 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Http\Request;
+
+interface {{ class }}
+{
+
+    /**
+     * Do something.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     */
+    public function someMethod(Request $request): void;
+}

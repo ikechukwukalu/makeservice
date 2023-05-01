@@ -7,15 +7,15 @@ use Illuminate\Support\Str;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 
-#[AsCommand(name: 'make:service')]
-class MakeServiceCommand extends GeneratorCommand
+#[AsCommand(name: 'make:trait')]
+class MakeTraitCommand extends GeneratorCommand
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'make:service';
+    protected $name = 'make:trait';
 
     /**
      * The name of the console command.
@@ -26,48 +26,21 @@ class MakeServiceCommand extends GeneratorCommand
      *
      * @deprecated
      */
-    protected static $defaultName = 'make:service';
+    protected static $defaultName = 'make:trait';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new service class';
+    protected $description = 'Create a new trait class';
 
     /**
      * The type of class being generated.
      *
      * @var string
      */
-    protected $type = 'Service';
-
-    /**
-     * Build the class with the given name.
-     *
-     * @param  string  $name
-     * @return string
-     */
-    protected function buildClass($name)
-    {
-        $request = $this->option('request');
-
-        if (! Str::startsWith($request, [
-            $this->laravel->getNamespace(),
-            'Illuminate',
-            '\\',
-        ])) {
-            $request = $this->laravel->getNamespace().'Http\\Requests\\'.str_replace('/', '\\', $request);
-        }
-
-        $stub = str_replace(
-            ['DummyRequest', '{{ request }}'], class_basename($request), parent::buildClass($name)
-        );
-
-        return str_replace(
-            ['DummyFullRequest', '{{ requestNamespace }}'], trim($request, '\\'), $stub
-        );
-    }
+    protected $type = 'Trait';
 
     /**
      * Determine if the class already exists.
@@ -88,11 +61,7 @@ class MakeServiceCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        if ($this->option('request')) {
-            return __DIR__.'/stubs/service.stub';
-        }
-
-        return __DIR__.'/stubs/service-duck.stub';
+        return __DIR__.'/stubs/trait.stub';
     }
 
     /**
@@ -116,7 +85,7 @@ class MakeServiceCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Services';
+        return $rootNamespace.'\Traits';
     }
 
     /**
@@ -127,8 +96,7 @@ class MakeServiceCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the service already exists'],
-            ['request', 'r', InputOption::VALUE_REQUIRED, 'Create a form namespace class for this service'],
+            ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the trait already exists'],
         ];
     }
 }

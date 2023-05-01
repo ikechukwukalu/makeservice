@@ -1,0 +1,59 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ modelNamespace }};
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+
+interface {{ class }}
+{
+
+    /**
+     * Fetch all \{{ modelNamespace }} records.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getAll(): EloquentCollection;
+
+    /**
+     * Fetch \{{ modelNamespace }} record by ID.
+     *
+     * @param int $id
+     * @return \{{ modelNamespace }}|null
+     */
+    public function getById(int $id): ?{{ model }};
+
+    /**
+     * Delete \{{ modelNamespace }} record by ID.
+     *
+     * @param int $id
+     * @return void
+     */
+    public function delete(int $id): void;
+
+    /**
+     * Create \{{ modelNamespace }} record.
+     *
+     * @param array $arrayDetails
+     * @return \{{ modelNamespace }}
+     */
+    public function create(array $arrayDetails): {{ model }};
+
+    /**
+     * Fetch or create a single \{{ modelNamespace }} record.
+     *
+     * @param array $matchDetails
+     * @param array $arrayDetails
+     * @return \{{ modelNamespace }}
+     */
+    public function firstOrCreate(array $matchDetails, array $arrayDetails): {{ model }};
+
+    /**
+     * Update \{{ modelNamespace }} record.
+     *
+     * @param int $id
+     * @param array $arrayDetails
+     * @return int
+     */
+    public function update(int $id, array $arrayDetails): int;
+}

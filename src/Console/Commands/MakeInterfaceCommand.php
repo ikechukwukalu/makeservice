@@ -7,15 +7,15 @@ use Illuminate\Support\Str;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 
-#[AsCommand(name: 'make:service')]
-class MakeServiceCommand extends GeneratorCommand
+#[AsCommand(name: 'make:interface')]
+class MakeInterfaceCommand extends GeneratorCommand
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'make:service';
+    protected $name = 'make:interface';
 
     /**
      * The name of the console command.
@@ -26,21 +26,21 @@ class MakeServiceCommand extends GeneratorCommand
      *
      * @deprecated
      */
-    protected static $defaultName = 'make:service';
+    protected static $defaultName = 'make:interface';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new service class';
+    protected $description = 'Create a new interface class';
 
     /**
      * The type of class being generated.
      *
      * @var string
      */
-    protected $type = 'Service';
+    protected $type = 'Interface';
 
     /**
      * Build the class with the given name.
@@ -50,22 +50,22 @@ class MakeServiceCommand extends GeneratorCommand
      */
     protected function buildClass($name)
     {
-        $request = $this->option('request');
+        $model = $this->option('model');
 
-        if (! Str::startsWith($request, [
+        if (! Str::startsWith($model, [
             $this->laravel->getNamespace(),
             'Illuminate',
             '\\',
         ])) {
-            $request = $this->laravel->getNamespace().'Http\\Requests\\'.str_replace('/', '\\', $request);
+            $model = $this->laravel->getNamespace().'Models\\'.str_replace('/', '\\', $model);
         }
 
         $stub = str_replace(
-            ['DummyRequest', '{{ request }}'], class_basename($request), parent::buildClass($name)
+            ['DummyModel', '{{ model }}'], class_basename($model), parent::buildClass($name)
         );
 
         return str_replace(
-            ['DummyFullRequest', '{{ requestNamespace }}'], trim($request, '\\'), $stub
+            ['DummyFullModel', '{{ modelNamespace }}'], trim($model, '\\'), $stub
         );
     }
 
@@ -88,11 +88,11 @@ class MakeServiceCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        if ($this->option('request')) {
-            return __DIR__.'/stubs/service.stub';
+        if ($this->option('model')) {
+            return __DIR__.'/stubs/interface.stub';
         }
 
-        return __DIR__.'/stubs/service-duck.stub';
+        return __DIR__.'/stubs/interface-duck.stub';
     }
 
     /**
@@ -116,7 +116,7 @@ class MakeServiceCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Services';
+        return $rootNamespace.'\Interfaces';
     }
 
     /**
@@ -127,8 +127,8 @@ class MakeServiceCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the service already exists'],
-            ['request', 'r', InputOption::VALUE_REQUIRED, 'Create a form namespace class for this service'],
+            ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the interface already exists'],
+            ['model', 'm', InputOption::VALUE_REQUIRED, 'Create a model namespace for this interface'],
         ];
     }
 }

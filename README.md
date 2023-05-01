@@ -8,7 +8,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/ikechukwukalu/makeservice?style=flat-square)](https://packagist.org/packages/ikechukwukalu/makeservice)
 [![Licence](https://img.shields.io/packagist/l/ikechukwukalu/makeservice?style=flat-square)](https://github.com/ikechukwukalu/makeservice/blob/main/LICENSE.md)
 
-A laravel package for scaffolding service classes.
+A laravel package for scaffolding Service, Traits, Repository and Interface classes.
 
 ## REQUIREMENTS
 
@@ -26,12 +26,34 @@ composer require ikechukwukalu/makeservice
 To generate a new service class.
 
 - `php artisan make:service SampleService`
-- `php artisan make:service SampleService --force`. This will overwrite and existing service class.
+- `php artisan make:service SampleService --force`. This will overwrite an existing service class.
 
 To generate a new service class for a particular request class.
 
 - `php artisan make:request SampleRequest`
 - `php artisan make:service SampleService --request=SampleRequest`
+
+## TRAIT CLASS
+
+To generate a new trait class.
+
+- `php artisan make:trait SampleTrait`
+- `php artisan make:trait SampleTrait --force`. This will overwrite an existing trait class.
+
+## INTERFACE CLASS
+
+To generate a new interface class.
+
+- `php artisan make:interface SampleInterface`
+- `php artisan make:interface SampleInterface --force`. This will overwrite an existing interface class.
+
+## REPOSITORY CLASS
+
+To generate a new repository class for a particular interface class.
+
+- `php artisan make:interface UserRepositoryInterface --model=User`
+- `php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface`.
+- `php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface --force`. This will overwrite an existing repository class.
 
 ## LICENSE
 

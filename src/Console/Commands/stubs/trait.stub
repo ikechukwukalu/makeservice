@@ -1,0 +1,20 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Http\Request;
+
+trait {{ class }}
+{
+
+    /**
+     * Does something.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     */
+    public function someMethod(Request $request): void
+    {
+        //
+    }
+}
