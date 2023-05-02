@@ -116,7 +116,7 @@ class MakeInterfaceCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Interfaces';
+        return $rootNamespace.'\Contracts';
     }
 
     /**

@@ -5,6 +5,7 @@ namespace {{ namespace }};
 use {{ interfaceNamespace }};
 use {{ modelNamespace }};
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class {{ class }} implements {{ interface }}
 {
@@ -74,5 +75,16 @@ class {{ class }} implements {{ interface }}
     public function update(int $id, array $arrayDetails): int
     {
         return {{ model }}::where('id', $id)->update($arrayDetails);
+    }
+
+    /**
+     * Update \{{ modelNamespace }} record.
+     *
+     * @param int $pageSize
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    public function getPaginated(int $pageSize): LengthAwarePaginator
+    {
+        return {{ model }}::paginate($pageSize);
     }
 }

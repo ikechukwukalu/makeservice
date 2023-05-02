@@ -67,7 +67,7 @@ class MakeRepositoryCommand extends GeneratorCommand
             'Illuminate',
             '\\',
         ])) {
-            $interface = $this->laravel->getNamespace().'Interfaces\\'.str_replace('/', '\\', $interface);
+            $interface = $this->laravel->getNamespace().'Contracts\\'.str_replace('/', '\\', $interface);
         }
 
         $stub = str_replace(
