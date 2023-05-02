@@ -162,18 +162,7 @@ class MakeRepositoryCommand extends GeneratorCommand
             return false;
         }
 
-        if (!$this->option('model')) {
-            if (!$this->option('interface')) {
-                $this->components->error('Expected options "model" and "interface"!');
-                return false;
-            }
-
-            $this->components->error('Expected option "model"!');
-            return false;
-        }
-
-        if (!$this->option('interface')) {
-            $this->components->error('Expected option "interface"!');
+        if (!$this->areOptionsPresent()) {
             return false;
         }
 
@@ -202,5 +191,25 @@ class MakeRepositoryCommand extends GeneratorCommand
         }
 
         $this->components->info(sprintf('%s [%s] created successfully.', $info, $path));
+    }
+
+    private function areOptionsPresent():bool
+    {
+        if (!$this->option('model')) {
+            if (!$this->option('interface')) {
+                $this->components->error('Expected options "model" and "interface"!');
+                return false;
+            }
+
+            $this->components->error('Expected option "model"!');
+            return false;
+        }
+
+        if (!$this->option('interface')) {
+            $this->components->error('Expected option "interface"!');
+            return false;
+        }
+
+        return true;
     }
 }
