@@ -1,5 +1,10 @@
-# v1.0.1
+# v1.0.2
+
+- Corrected console output info.
+
+## v1.0.1
 
 - Added Traits scaffolding.
 - Added Interface scaffolding.
+- Added Repository scaffolding.
 - Added Repository scaffolding.

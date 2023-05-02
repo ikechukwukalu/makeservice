@@ -41,7 +41,7 @@ class MakeRepositoryCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $type = 'Interface';
+    protected $type = 'Respository';
 
     /**
      * Build the class with the given name.
