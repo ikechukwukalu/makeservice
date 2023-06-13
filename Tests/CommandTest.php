@@ -22,6 +22,10 @@ class CommandTest extends TestCase
 
         $this->artisan('make:trait SampleTrait --force')->assertSuccessful();
 
+        $this->artisan('make:enum Sample')->assertSuccessful();
+
+        $this->artisan('make:enum Sample --force')->assertSuccessful();
+
         $this->artisan('make:interface SampleInterface')->assertSuccessful();
 
         $this->artisan('make:interface SampleInterface --force')->assertSuccessful();

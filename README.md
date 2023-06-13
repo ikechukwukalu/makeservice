@@ -46,6 +46,15 @@ php artisan make:trait SampleTrait
 php artisan make:trait SampleTrait --force //This will overwrite an existing trait class.
 ```
 
+## ENUM CLASS
+
+To generate a new trait class.
+
+``` shell
+php artisan make:enum Sample
+php artisan make:enum Sample --force //This will overwrite an existing enum class.
+```
+
 ## INTERFACE CLASS
 
 To generate a new interface class.
