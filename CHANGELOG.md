@@ -1,4 +1,8 @@
-# v1.0.2
+# v1.0.3
+
+- Added Enums scaffolding.
+
+## v1.0.2
 
 - Corrected console output info.
 
