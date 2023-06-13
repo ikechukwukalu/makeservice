@@ -8,7 +8,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/ikechukwukalu/makeservice?style=flat-square)](https://packagist.org/packages/ikechukwukalu/makeservice)
 [![Licence](https://img.shields.io/packagist/l/ikechukwukalu/makeservice?style=flat-square)](https://github.com/ikechukwukalu/makeservice/blob/main/LICENSE.md)
 
-A laravel package for scaffolding Service, Traits, Repository and Interface classes.
+A laravel package for scaffolding Service, Traits, Enums, Repository and Interface classes.
 
 ## REQUIREMENTS
 
