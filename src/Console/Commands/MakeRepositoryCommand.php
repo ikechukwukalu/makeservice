@@ -52,7 +52,13 @@ class MakeRepositoryCommand extends GeneratorCommand
     protected function buildClass($name)
     {
         $model = $this->option('model');
-        $interface = $this->option('interface');
+
+        if ($this->option('contract')) {
+            $interface = $model . "RepositoryInterface";
+            $this->call('make:interface', ['name' => $interface, '--model' => $model]);
+        } else {
+            $interface = $this->option('interface');
+        }
 
         if (! Str::startsWith($model, [
             $this->laravel->getNamespace(),
@@ -141,9 +147,10 @@ class MakeRepositoryCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
+            ['contract', 'c', InputOption::VALUE_NONE, 'Create an interface class for this repository'],
             ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the repository already exists'],
+            ['interface', 'i', InputOption::VALUE_OPTIONAL, 'Create an interface namespace for this repository'],
             ['model', 'm', InputOption::VALUE_REQUIRED, 'Create a model namespace for this repository'],
-            ['interface', 'i', InputOption::VALUE_REQUIRED, 'Create an interface namespace for this repository'],
         ];
     }
 
@@ -158,7 +165,6 @@ class MakeRepositoryCommand extends GeneratorCommand
     {
         if ($this->isReservedName($this->getNameInput())) {
             $this->components->error('The name "'.$this->getNameInput().'" is reserved by PHP.');
-
             return false;
         }
 
@@ -196,8 +202,8 @@ class MakeRepositoryCommand extends GeneratorCommand
     private function areOptionsPresent():bool
     {
         if (!$this->option('model')) {
-            if (!$this->option('interface')) {
-                $this->components->error('Expected options "model" and "interface"!');
+            if (!($this->option('contract') || $this->option('interface'))) {
+                $this->components->error('Expected options "model" and "contract or interface"!');
                 return false;
             }
 
@@ -205,8 +211,8 @@ class MakeRepositoryCommand extends GeneratorCommand
             return false;
         }
 
-        if (!$this->option('interface')) {
-            $this->components->error('Expected option "interface"!');
+        if (!($this->option('contract') || $this->option('interface'))) {
+            $this->components->error('Expected option "interface or contract"!');
             return false;
         }
 

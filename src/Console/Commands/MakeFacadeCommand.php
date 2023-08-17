@@ -7,15 +7,15 @@ use Illuminate\Support\Str;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 
-#[AsCommand(name: 'make:service')]
-class MakeServiceCommand extends GeneratorCommand
+#[AsCommand(name: 'make:facade')]
+class MakeFacadeCommand extends GeneratorCommand
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'make:service';
+    protected $name = 'make:facade';
 
     /**
      * The name of the console command.
@@ -26,21 +26,21 @@ class MakeServiceCommand extends GeneratorCommand
      *
      * @deprecated
      */
-    protected static $defaultName = 'make:service';
+    protected static $defaultName = 'make:facade';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new service class';
+    protected $description = 'Create a new facade class';
 
     /**
      * The type of class being generated.
      *
      * @var string
      */
-    protected $type = 'Service';
+    protected $type = 'Facade';
 
     /**
      * Build the class with the given name.
@@ -50,28 +50,28 @@ class MakeServiceCommand extends GeneratorCommand
      */
     protected function buildClass($name)
     {
-        if (!$request = $this->option('request')) {
-            return parent::buildClass($name);
-        }
+        $contract = $this->option('contract');
+        $accessor = explode('\\', strtolower($name));
+        $accessor = array_pop($accessor);
 
-        if ($this->option('extra')) {
-            $this->call('make:request', ['name' => $request]);
-        }
-
-        if (! Str::startsWith($request, [
+        if (! Str::startsWith($contract, [
             $this->laravel->getNamespace(),
             'Illuminate',
             '\\',
         ])) {
-            $request = $this->laravel->getNamespace().'Http\\Requests\\'.str_replace('/', '\\', $request);
+            $contract = $this->laravel->getNamespace().'Contracts\\'.str_replace('/', '\\', $contract);
         }
 
         $stub = str_replace(
-            ['DummyRequest', '{{ request }}'], class_basename($request), parent::buildClass($name)
+            ['DummyContract', '{{ contract }}'], class_basename($contract), parent::buildClass($name)
+        );
+
+        $stub = str_replace(
+            ['DummyFullAccessor', '{{ accessor }}'], $accessor, $stub
         );
 
         return str_replace(
-            ['DummyFullRequest', '{{ requestNamespace }}'], trim($request, '\\'), $stub
+            ['DummyFullContract', '{{ contractNamespace }}'], trim($contract, '\\'), $stub
         );
     }
 
@@ -94,11 +94,11 @@ class MakeServiceCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        if ($this->option('request')) {
-            return __DIR__.'/stubs/service.stub';
+        if ($this->option('contract')) {
+            return __DIR__.'/stubs/facade.stub';
         }
 
-        return __DIR__.'/stubs/service-duck.stub';
+        return __DIR__.'/stubs/facade-duck.stub';
     }
 
     /**
@@ -122,7 +122,7 @@ class MakeServiceCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Services';
+        return $rootNamespace.'\Facades';
     }
 
     /**
@@ -133,9 +133,8 @@ class MakeServiceCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['extra', 'e', InputOption::VALUE_NONE, 'Create an form request class for this service'],
-            ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the service already exists'],
-            ['request', 'r', InputOption::VALUE_OPTIONAL, 'Create a form request namespace class for this service'],
+            ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the facade already exists'],
+            ['contract', 'c', InputOption::VALUE_OPTIONAL, 'Create a contract namespace for this facade'],
         ];
     }
 }

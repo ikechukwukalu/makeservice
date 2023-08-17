@@ -1,4 +1,10 @@
-# v1.0.3
+# v1.0.4
+
+- Added Facade scaffolding.
+- Added "--contract" option for scaffolding Repository and Contract/Interface classes at once.
+- Added "--extra" option for scaffolding Service and FormRequest classes.
+
+## v1.0.3
 
 - Added Enums scaffolding.
 
