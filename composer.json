@@ -26,8 +26,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=8.0",
-        "laravel/framework": "^9.0|^10.0"
+        "illuminate/console": "^9.0|^10.0",
+        "illuminate/support": "^9.0|^10.0",
+        "symfony/console": "^6.0",
+        "php": ">=8.0"
     },
     "require-dev": {
         "orchestra/testbench": "^7.0|^8.0",

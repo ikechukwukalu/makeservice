@@ -1,4 +1,8 @@
-# v1.0.4
+# v1.0.5
+
+- Refactored required packages in `composer.json`.
+
+## v1.0.4
 
 - Added Facade scaffolding.
 - Added "--contract" option for scaffolding Repository and Contract/Interface classes at once.
