@@ -26,7 +26,7 @@ class {{ class }} implements {{ interface }}
      * @param int $id
      * @return \{{ modelNamespace }}|null
      */
-    public function getById(int $id): ?{{ model }}
+    public function getById(int $id): null|{{ model }}
     {
         return {{ model }}::find($id);
     }

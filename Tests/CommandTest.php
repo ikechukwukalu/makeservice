@@ -30,6 +30,10 @@ class CommandTest extends TestCase
 
         $this->artisan('make:enum Sample -f')->assertSuccessful();
 
+        $this->artisan('make:action Sample')->assertSuccessful();
+
+        $this->artisan('make:action Sample -f')->assertSuccessful();
+
         $this->artisan('make:interface SampleInterface')->assertSuccessful();
 
         $this->artisan('make:interface SampleInterface -f')->assertSuccessful();

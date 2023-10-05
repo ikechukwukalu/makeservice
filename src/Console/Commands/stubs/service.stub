@@ -12,9 +12,9 @@ class {{ class }}
      * Handle the request.
      *
      * @param  \{{ requestNamespace }}  $request
-     * @return ?array
+     * @return null|array
      */
-    public static function handle({{ request }} $request): ?array
+    public function handle({{ request }} $request): null|array
     {
         $validated = $request->validated();
 

@@ -1,4 +1,8 @@
-# v1.0.5
+# v1.0.6
+
+- Added Actions classes scaffolding.
+
+## v1.0.5
 
 - Refactored required packages in `composer.json`.
 

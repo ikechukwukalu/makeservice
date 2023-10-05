@@ -8,7 +8,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/ikechukwukalu/makeservice?style=flat-square)](https://packagist.org/packages/ikechukwukalu/makeservice)
 [![Licence](https://img.shields.io/packagist/l/ikechukwukalu/makeservice?style=flat-square)](https://github.com/ikechukwukalu/makeservice/blob/main/LICENSE.md)
 
-A laravel package for scaffolding Service, Traits, Enums, Facades, Repository and Interface classes.
+A laravel package for scaffolding Service, Traits, Enums, Facades, Actions, Repository and Interface classes.
 
 ## REQUIREMENTS
 
@@ -57,12 +57,22 @@ php artisan make:trait SampleTrait  -f //This will overwrite an existing trait c
 
 ## ENUM CLASS
 
-To generate a new trait class.
+To generate a new enum class.
 
 ``` shell
 php artisan make:enum Sample
 
 php artisan make:enum Sample  -f //This will overwrite an existing enum class.
+```
+
+## Action CLASS
+
+To generate a new action class.
+
+``` shell
+php artisan make:action Sample
+
+php artisan make:action Sample  -f //This will overwrite an existing action class.
 ```
 
 ## CONTRACT CLASS

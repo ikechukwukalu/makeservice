@@ -3,6 +3,7 @@
 namespace Ikechukwukalu\Makeservice;
 
 use Illuminate\Support\ServiceProvider;
+use Ikechukwukalu\Makeservice\Console\Commands\MakeActionCommand;
 use Ikechukwukalu\Makeservice\Console\Commands\MakeEnumCommand;
 use Ikechukwukalu\Makeservice\Console\Commands\MakeFacadeCommand;
 use Ikechukwukalu\Makeservice\Console\Commands\MakeInterfaceCommand;
@@ -22,6 +23,7 @@ class MakeServiceServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
+                MakeActionCommand::class,
                 MakeEnumCommand::class,
                 MakeFacadeCommand::class,
                 MakeInterfaceCommand::class,

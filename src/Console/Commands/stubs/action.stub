@@ -11,12 +11,10 @@ class {{ class }}
      * Handle the request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return null|array
+     * @return void
      */
-    public function handle(Request $request): null|array
+    public function handle(Request $request): void
     {
-        $validated = $request->validated();
-
-        return null;
+        //
     }
 }

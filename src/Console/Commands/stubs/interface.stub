@@ -22,7 +22,7 @@ interface {{ class }}
      * @param int $id
      * @return \{{ modelNamespace }}|null
      */
-    public function getById(int $id): ?{{ model }};
+    public function getById(int $id): null|{{ model }};
 
     /**
      * Delete \{{ modelNamespace }} record by ID.
