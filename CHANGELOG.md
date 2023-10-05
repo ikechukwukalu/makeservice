@@ -1,6 +1,6 @@
 # v1.0.6
 
-- Added Actions classes scaffolding.
+- Added Actions class scaffolding.
 
 ## v1.0.5
 
