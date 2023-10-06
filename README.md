@@ -65,7 +65,7 @@ php artisan make:enum Sample
 php artisan make:enum Sample  -f //This will overwrite an existing enum class.
 ```
 
-## Action CLASS
+## ACTION CLASS
 
 To generate a new action class.
 
