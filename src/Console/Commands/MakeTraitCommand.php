@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 
-#[AsCommand(name: 'make:trait')]
+#[AsCommand(name: 'make:traitclass')]
 class MakeTraitCommand extends GeneratorCommand
 {
     /**
@@ -15,7 +15,7 @@ class MakeTraitCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $name = 'make:trait';
+    protected $name = 'make:traitclass';
 
     /**
      * The name of the console command.
@@ -26,7 +26,7 @@ class MakeTraitCommand extends GeneratorCommand
      *
      * @deprecated
      */
-    protected static $defaultName = 'make:trait';
+    protected static $defaultName = 'make:traitclass';
 
     /**
      * The console command description.

@@ -50,9 +50,9 @@ php artisan make:service SampleService --request=SampleRequest -e
 To generate a new trait class.
 
 ``` shell
-php artisan make:trait SampleTrait
+php artisan make:traitclass SampleTrait
 
-php artisan make:trait SampleTrait  -f //This will overwrite an existing trait class.
+php artisan make:traitclass SampleTrait  -f //This will overwrite an existing trait class.
 ```
 
 ## ENUM CLASS
@@ -60,9 +60,9 @@ php artisan make:trait SampleTrait  -f //This will overwrite an existing trait c
 To generate a new enum class.
 
 ``` shell
-php artisan make:enum Sample
+php artisan make:enumclass Sample
 
-php artisan make:enum Sample  -f //This will overwrite an existing enum class.
+php artisan make:enumclass Sample  -f //This will overwrite an existing enum class.
 ```
 
 ## ACTION CLASS

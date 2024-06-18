@@ -1,4 +1,9 @@
-# v2.0.0
+# v2.0.1
+
+- Changed `make:enum`  to `make:enumclass`.
+- Changed `make:trait`  to `make:traitclass`.
+
+## v2.0.0
 
 - Updated package to support Laravel 11.
 

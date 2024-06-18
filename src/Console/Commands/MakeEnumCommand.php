@@ -6,7 +6,7 @@ use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 
-#[AsCommand(name: 'make:enum')]
+#[AsCommand(name: 'make:enumclass')]
 class MakeEnumCommand extends GeneratorCommand
 {
     /**
@@ -14,7 +14,7 @@ class MakeEnumCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $name = 'make:enum';
+    protected $name = 'make:enumclass';
 
     /**
      * The name of the console command.
@@ -25,7 +25,7 @@ class MakeEnumCommand extends GeneratorCommand
      *
      * @deprecated
      */
-    protected static $defaultName = 'make:enum';
+    protected static $defaultName = 'make:enumclass';
 
     /**
      * The console command description.

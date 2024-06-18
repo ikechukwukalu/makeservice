@@ -22,13 +22,13 @@ class CommandTest extends TestCase
 
         $this->artisan('make:service SampleService --request=SampleRequest -e -f')->assertSuccessful();
 
-        $this->artisan('make:trait SampleTrait')->assertSuccessful();
+        $this->artisan('make:traitclass SampleTrait')->assertSuccessful();
 
-        $this->artisan('make:trait SampleTrait -f')->assertSuccessful();
+        $this->artisan('make:traitclass SampleTrait -f')->assertSuccessful();
 
-        $this->artisan('make:enum Sample')->assertSuccessful();
+        $this->artisan('make:enumclass Sample')->assertSuccessful();
 
-        $this->artisan('make:enum Sample -f')->assertSuccessful();
+        $this->artisan('make:enumclass Sample -f')->assertSuccessful();
 
         $this->artisan('make:action Sample')->assertSuccessful();
 
