@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 
-#[AsCommand(name: 'make:interface')]
+#[AsCommand(name: 'make:interfaceclass')]
 class MakeInterfaceCommand extends GeneratorCommand
 {
     /**
@@ -15,7 +15,7 @@ class MakeInterfaceCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $name = 'make:interface';
+    protected $name = 'make:interfaceclass';
 
     /**
      * The name of the console command.
@@ -26,7 +26,7 @@ class MakeInterfaceCommand extends GeneratorCommand
      *
      * @deprecated
      */
-    protected static $defaultName = 'make:interface';
+    protected static $defaultName = 'make:interfaceclass';
 
     /**
      * The console command description.
