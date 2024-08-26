@@ -34,13 +34,13 @@ class CommandTest extends TestCase
 
         $this->artisan('make:action Sample -f')->assertSuccessful();
 
-        $this->artisan('make:interface SampleInterface')->assertSuccessful();
+        $this->artisan('make:interfaceclass SampleInterface')->assertSuccessful();
 
-        $this->artisan('make:interface SampleInterface -f')->assertSuccessful();
+        $this->artisan('make:interfaceclass SampleInterface -f')->assertSuccessful();
 
-        $this->artisan('make:interface UserRepositoryInterface --model=User')->assertSuccessful();
+        $this->artisan('make:interfaceclass UserRepositoryInterface --model=User')->assertSuccessful();
 
-        $this->artisan('make:interface UserRepositoryInterface --model=User -f')->assertSuccessful();
+        $this->artisan('make:interfaceclass UserRepositoryInterface --model=User -f')->assertSuccessful();
 
         $this->artisan('make:repository UserRepository --interface=UserRepositoryInterface --model=User')->assertSuccessful();
 
