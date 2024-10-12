@@ -55,7 +55,7 @@ class MakeRepositoryCommand extends GeneratorCommand
 
         if ($this->option('contract')) {
             $interface = $model . "RepositoryInterface";
-            $this->call('make:interface', ['name' => $interface, '--model' => $model]);
+            $this->call('make:interfaceclass', ['name' => $interface, '--model' => $model]);
         } else {
             $interface = $this->option('interface');
         }
