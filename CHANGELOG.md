@@ -1,7 +1,7 @@
 # v2.0.4
 
 - Allow string ids for contract/repository classes.
-- Added 'user_id' flag for contract/repository classes.
+- Added 'user' option for contract/repository classes.
 
 ## v2.0.3
 
