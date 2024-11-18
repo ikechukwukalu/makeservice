@@ -1,4 +1,9 @@
-# v2.0.2
+# v2.0.4
+
+- Allow string ids for contract/repository classes.
+- Added 'user_id' flag for contract/repository classes.
+
+## v2.0.3
 
 - Changed `make:interface`  to `make:interfaceclass`.
 

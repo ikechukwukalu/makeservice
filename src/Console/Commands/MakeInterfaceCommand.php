@@ -88,6 +88,10 @@ class MakeInterfaceCommand extends GeneratorCommand
      */
     protected function getStub()
     {
+        if ($this->option('model') && $this->option('user')) {
+            return __DIR__.'/stubs/interface-user.stub';
+        }
+
         if ($this->option('model')) {
             return __DIR__.'/stubs/interface.stub';
         }
@@ -129,6 +133,7 @@ class MakeInterfaceCommand extends GeneratorCommand
         return [
             ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the interface already exists'],
             ['model', 'm', InputOption::VALUE_REQUIRED, 'Create a model namespace for this interface'],
+            ['user', 'u', InputOption::VALUE_NONE, 'Create extra fetch by user id functions for this repository'],
         ];
     }
 }

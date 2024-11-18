@@ -97,10 +97,23 @@ php artisan make:repository UserRepository --model=User --interface=UserReposito
 php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface  -f //This will overwrite an existing repository class.
 ```
 
-To generate a repository class and a contract/interface  class together
+To generate extra fetch by user id methods.
+
+``` shell
+php artisan make:interfaceclass UserRepositoryInterface --model=User --user
+
+php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface --user
+
+php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface --user  -f //This will overwrite an existing repository class.
+```
+
+To generate a repository class and a contract/interface class together
 
 ```shell
 php artisan make:repository UserRepository --model=User -c
+
+
+php artisan make:repository UserRepository --model=User --user -c
 ```
 
 ## FACADE CLASS

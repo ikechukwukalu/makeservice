@@ -42,13 +42,25 @@ class CommandTest extends TestCase
 
         $this->artisan('make:interfaceclass UserRepositoryInterface --model=User -f')->assertSuccessful();
 
+        $this->artisan('make:interfaceclass UserRepositoryInterface --model=User --user')->assertSuccessful();
+
+        $this->artisan('make:interfaceclass UserRepositoryInterface --model=User --user -f')->assertSuccessful();
+
         $this->artisan('make:repository UserRepository --interface=UserRepositoryInterface --model=User')->assertSuccessful();
 
         $this->artisan('make:repository UserRepository --interface=UserRepositoryInterface --model=User -f')->assertSuccessful();
 
+        $this->artisan('make:repository UserRepository --interface=UserRepositoryInterface --model=User --user')->assertSuccessful();
+
+        $this->artisan('make:repository UserRepository --interface=UserRepositoryInterface --model=User --user -f')->assertSuccessful();
+
         $this->artisan('make:repository UserRepository --model=User -c')->assertSuccessful();
 
         $this->artisan('make:repository UserRepository --model=User -c -f')->assertSuccessful();
+
+        $this->artisan('make:repository UserRepository --model=User --user -c')->assertSuccessful();
+
+        $this->artisan('make:repository UserRepository --model=User --user -c -f')->assertSuccessful();
 
         $this->artisan('make:facade Sample')->assertSuccessful();
 

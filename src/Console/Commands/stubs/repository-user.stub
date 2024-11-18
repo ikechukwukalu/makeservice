@@ -1,0 +1,130 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ interfaceNamespace }};
+use {{ modelNamespace }};
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Illuminate\Pagination\LengthAwarePaginator;
+
+class {{ class }} implements {{ interface }}
+{
+
+    /**
+     * Fetch all \{{ modelNamespace }} records.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getAll(): EloquentCollection
+    {
+        return {{ model }}::all();
+    }
+
+    /**
+     * Fetch \{{ modelNamespace }} record by ID.
+     *
+     * @param int|string $id
+     * @return \{{ modelNamespace }}|null
+     */
+    public function getById(int|string $id): null|{{ model }}
+    {
+        return {{ model }}::find($id);
+    }
+
+    /**
+     * Delete \{{ modelNamespace }} record by ID.
+     *
+     * @param int|string $id
+     * @return void
+     */
+    public function delete(int|string $id): void
+    {
+        {{ model }}::destroy($id);
+    }
+
+    /**
+     * Create \{{ modelNamespace }} record.
+     *
+     * @param array $arrayDetails
+     * @return \{{ modelNamespace }}
+     */
+    public function create(array $arrayDetails): {{ model }}
+    {
+        return {{ model }}::create($arrayDetails);
+    }
+
+    /**
+     * Fetch or create a single \{{ modelNamespace }} record.
+     *
+     * @param array $matchDetails
+     * @param array $arrayDetails
+     * @return \{{ modelNamespace }}
+     */
+    public function firstOrCreate(array $matchDetails, array $arrayDetails): {{ model }}
+    {
+        return {{ model }}::firstOrCreate($matchDetails, $arrayDetails);
+    }
+
+    /**
+     * Update \{{ modelNamespace }} record.
+     *
+     * @param int|string $id
+     * @param array $arrayDetails
+     * @return int
+     */
+    public function update(int|string $id, array $arrayDetails): int
+    {
+        return {{ model }}::where('id', $id)->update($arrayDetails);
+    }
+
+    /**
+     * Update \{{ modelNamespace }} record.
+     *
+     * @param int $pageSize
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    public function getPaginated(int $pageSize): LengthAwarePaginator
+    {
+        return {{ model }}::paginate($pageSize);
+    }
+
+    /**
+     * Fetch \{{ modelNamespace }} record by ID and user ID.
+     *
+     * @param int|string $id
+     * @param int|string $userId
+     * @return \{{ modelNamespace }}|null
+     */
+    public function getByIdAndUserId(int|string $id, int|string $userId): null|{{ model }}
+    {
+        return {{ model }}::where('id', $id)
+                ->where('user_id', $userId)->first();
+    }
+
+    /**
+     * Fetch \{{ modelNamespace }} record by user ID.
+     *
+     * @param int|string $userId
+     * @param bool $first
+     * @return \{{ modelNamespace }}|null|\Illuminate\Database\Eloquent\Collection
+     */
+    public function getByUserId(int|string $userId, bool $first = false): null|{{ model }}|EloquentCollection
+    {
+        if ($first) {
+            return {{ model }}::where('user_id', $userId)->first();
+        }
+
+        return {{ model }}::where('user_id', $userId)->get();
+    }
+
+    /**
+     * Fetch \{{ modelNamespace }} paginated record by user ID.
+     *
+     * @param int $pageSize
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    public function getPaginatedByUserId(int $pageSize, int|string $userId): LengthAwarePaginator
+    {
+        return {{ model }}::where('user_id', $userId)->paginate($pageSize);
+    }
+}

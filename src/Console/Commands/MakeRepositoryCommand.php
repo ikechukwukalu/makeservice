@@ -55,7 +55,12 @@ class MakeRepositoryCommand extends GeneratorCommand
 
         if ($this->option('contract')) {
             $interface = $model . "RepositoryInterface";
-            $this->call('make:interfaceclass', ['name' => $interface, '--model' => $model]);
+
+            if ($this->option('user')) {
+                $this->call('make:interfaceclass', ['name' => $interface, '--model' => $model, '--user' => null]);
+            } else {
+                $this->call('make:interfaceclass', ['name' => $interface, '--model' => $model]);
+            }
         } else {
             $interface = $this->option('interface');
         }
@@ -112,6 +117,10 @@ class MakeRepositoryCommand extends GeneratorCommand
      */
     protected function getStub()
     {
+        if ($this->option('user')) {
+            return __DIR__.'/stubs/repository-user.stub';
+        }
+
         return __DIR__.'/stubs/repository.stub';
     }
 
@@ -151,6 +160,7 @@ class MakeRepositoryCommand extends GeneratorCommand
             ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the repository already exists'],
             ['interface', 'i', InputOption::VALUE_OPTIONAL, 'Create an interface namespace for this repository'],
             ['model', 'm', InputOption::VALUE_REQUIRED, 'Create a model namespace for this repository'],
+            ['user', 'u', InputOption::VALUE_NONE, 'Create extra fetch by user id functions for this repository'],
         ];
     }
 
