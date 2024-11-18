@@ -23,10 +23,10 @@ class {{ class }} implements {{ interface }}
     /**
      * Fetch \{{ modelNamespace }} record by ID.
      *
-     * @param int $id
+     * @param int|string $id
      * @return \{{ modelNamespace }}|null
      */
-    public function getById(int $id): null|{{ model }}
+    public function getById(int|string $id): null|{{ model }}
     {
         return {{ model }}::find($id);
     }
@@ -34,10 +34,10 @@ class {{ class }} implements {{ interface }}
     /**
      * Delete \{{ modelNamespace }} record by ID.
      *
-     * @param int $id
+     * @param int|string $id
      * @return void
      */
-    public function delete(int $id): void
+    public function delete(int|string $id): void
     {
         {{ model }}::destroy($id);
     }
@@ -68,11 +68,11 @@ class {{ class }} implements {{ interface }}
     /**
      * Update \{{ modelNamespace }} record.
      *
-     * @param int $id
+     * @param int|string $id
      * @param array $arrayDetails
      * @return int
      */
-    public function update(int $id, array $arrayDetails): int
+    public function update(int|string $id, array $arrayDetails): int
     {
         return {{ model }}::where('id', $id)->update($arrayDetails);
     }

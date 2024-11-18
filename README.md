@@ -80,9 +80,9 @@ php artisan make:action Sample  -f //This will overwrite an existing action clas
 To generate a new contract/interface  class.
 
 ``` shell
-php artisan make:interface SampleInterface
+php artisan make:interfaceclass SampleInterface
 
-php artisan make:interface SampleInterface  -f //This will overwrite an existing interface  class.
+php artisan make:interfaceclass SampleInterface  -f //This will overwrite an existing interface  class.
 ```
 
 ## REPOSITORY CLASS
@@ -90,7 +90,7 @@ php artisan make:interface SampleInterface  -f //This will overwrite an existing
 To generate a new repository class for a particular contract/interface  class.
 
 ``` shell
-php artisan make:interface UserRepositoryInterface --model=User
+php artisan make:interfaceclass UserRepositoryInterface --model=User
 
 php artisan make:repository UserRepository --model=User --interface=UserRepositoryInterface
 

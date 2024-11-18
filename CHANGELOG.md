@@ -1,4 +1,8 @@
-# v2.0.1
+# v2.0.2
+
+- Changed `make:interface`  to `make:interfaceclass`.
+
+## v2.0.1
 
 - Changed `make:enum`  to `make:enumclass`.
 - Changed `make:trait`  to `make:traitclass`.

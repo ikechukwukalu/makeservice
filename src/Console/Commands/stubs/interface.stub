@@ -19,18 +19,18 @@ interface {{ class }}
     /**
      * Fetch \{{ modelNamespace }} record by ID.
      *
-     * @param int $id
+     * @param int|string $id
      * @return \{{ modelNamespace }}|null
      */
-    public function getById(int $id): null|{{ model }};
+    public function getById(int|string $id): null|{{ model }};
 
     /**
      * Delete \{{ modelNamespace }} record by ID.
      *
-     * @param int $id
+     * @param int|string $id
      * @return void
      */
-    public function delete(int $id): void;
+    public function delete(int|string $id): void;
 
     /**
      * Create \{{ modelNamespace }} record.
@@ -52,11 +52,11 @@ interface {{ class }}
     /**
      * Update \{{ modelNamespace }} record.
      *
-     * @param int $id
+     * @param int|string $id
      * @param array $arrayDetails
      * @return int
      */
-    public function update(int $id, array $arrayDetails): int;
+    public function update(int|string $id, array $arrayDetails): int;
 
     /**
      * Update \{{ modelNamespace }} record.
