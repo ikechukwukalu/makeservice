@@ -17,7 +17,7 @@ class {{ class }} implements {{ interface }}
      */
     public function getAll(): EloquentCollection
     {
-        return {{ model }}::all();
+        return {{ model }}::get();
     }
 
     /**
@@ -74,7 +74,7 @@ class {{ class }} implements {{ interface }}
      */
     public function update(int|string $id, array $arrayDetails): int
     {
-        return {{ model }}::where('id', $id)->update($arrayDetails);
+        return {{ model }}::find($id)->update($arrayDetails);
     }
 
     /**
