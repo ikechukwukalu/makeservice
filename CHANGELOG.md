@@ -1,4 +1,9 @@
-# v2.0.4
+# v2.0.5
+
+- Optimized to allow for mass update via eloquent to ensure the model events are fired when the model is updated.
+- Optimized to allow us to load model relationships.
+
+## v2.0.4
 
 - Allow string ids for contract/repository classes.
 - Added 'user' option for contract/repository classes.
