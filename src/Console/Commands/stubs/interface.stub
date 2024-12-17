@@ -59,6 +59,15 @@ interface {{ class }}
     public function update(int|string $id, array $arrayDetails): int;
 
     /**
+     * Update or create a single \{{ modelNamespace }} record.
+     *
+     * @param array $matchDetails
+     * @param array $arrayDetails
+     * @return \{{ modelNamespace }}
+     */
+    public function updateOrCreate(array $matchDetails, array $arrayDetails): {{ model }};
+
+    /**
      * Update \{{ modelNamespace }} record.
      *
      * @param int $pageSize
