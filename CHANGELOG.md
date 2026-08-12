@@ -1,4 +1,4 @@
-# Unreleased
+# v3.0.0
 
 - Added Laravel 12 support.
 - Require PHP 8.2 or newer.
