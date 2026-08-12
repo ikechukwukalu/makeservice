@@ -12,8 +12,8 @@ A laravel package for scaffolding Service, Traits, Enums, Facades, Actions, Repo
 
 ## REQUIREMENTS
 
-- PHP 7.3+
-- Laravel 8+
+- PHP 8.2+
+- Laravel 12
 
 ## STEPS TO INSTALL
 
